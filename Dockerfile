@@ -19,6 +19,8 @@ WORKDIR /
 RUN rpm -i https://download.elastic.co/logstash-forwarder/binaries/$LF_PKG_NAME
 ADD config/logstash-forwarder.conf  /opt/logstash-forwarder/bin/logstash-forwarder.conf
 EXPOSE 6782
+#ADD start_forwarder.sh /usr/local/bin/start_forwarder.sh
+#RUN chmod 755 /usr/local/bin/start_forwarder.sh
 
 RUN /opt/logstash-forwarder/bin/logstash-forwarder -config /bin/logstash-forwarder.conf
 
