@@ -18,6 +18,8 @@ ENV LF_PKG_NAME logstash-forwarder-0.4.0-1.x86_64.rpm
 WORKDIR / 
 RUN rpm -i https://download.elastic.co/logstash-forwarder/binaries/$LF_PKG_NAME
 ADD config/logstash-forwarder.conf  /opt/logstash-forwarder/bin/logstash-forwarder.conf
+ADD logstash-forwarder.crt /opt/logstash-forwarder/logstash-forwarder.crt
+ADD logstash-forwarder.key /opt/logstash-forwarder/logstash-forwarder.key
 
 ADD forwarder.sh /opt/logstash-forwarder/forwarder.sh
 
