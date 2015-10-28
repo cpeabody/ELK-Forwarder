@@ -12,4 +12,15 @@ RUN yum -y install wget \
                    tar
 WORKDIR /
  
-###### install Elasticsearch #######################################################
+###### install LogstashForwarder #######################################################
+ENV LF_PKG_NAME logstash-forwarder_linux_amd64
+
+WORKDIR / 
+RUN wget https://download.elastic.co/logstash-forwarder/binaries/$LF_PKG_NAME
+RUN rpm -q $LF_PKG_NAME
+RUN mv /$LF_PKG_NAME /logstash-forwarder
+#ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+#EXPOSE 5601
+########## run Kibana
+WORKDIR /                    
+ 
