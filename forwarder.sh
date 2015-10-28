@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/opt/forwarder/logstash-forwarder -config /opt/conf/config.json
+/opt/logstash-forwarder/bin/logstash-forwarder -config /opt/logstash-forwarder/bin/logstash-forwarder.conf
