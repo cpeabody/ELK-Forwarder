@@ -11,5 +11,5 @@ ENV JAVA_HOME /usr/
 RUN yum -y install wget \
                    tar
 WORKDIR /
-
+ 
 ###### install Elasticsearch #######################################################
