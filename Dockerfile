@@ -17,9 +17,9 @@ ENV LF_PKG_NAME logstash-forwarder-0.4.0-1.x86_64.rpm
 
 WORKDIR / 
 RUN rpm -i https://download.elastic.co/logstash-forwarder/binaries/$LF_PKG_NAME
-#RUN mv /$LF_PKG_NAME/logstash-forwarder
-#ADD config/logstash-forwarder.conf  /opt/logstash-forwarder/bin/logstash-forwarder.conf
-#EXPOSE 5601
+ADD config/logstash-forwarder.conf  /opt/logstash-forwarder/bin/logstash-forwarder.conf
+
+EXPOSE 6782
 ########## run Kibana
 WORKDIR /                    
  
